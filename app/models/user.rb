@@ -17,4 +17,3 @@ class User < ApplicationRecord
     user.posts_counter = 0
   end
 end
-
