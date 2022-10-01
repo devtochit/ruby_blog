@@ -78,11 +78,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Author
 
-👤 **Jesse uzoma (tjay)**
+👤 **Jesse uzoma (Hedevedup)**
 
-<a href="https://github.com/Kingjosh007">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a> &nbsp; &nbsp;
-<a href="https://twitter.com/KingJoChewa"> ![Twitter](https://img.shields.io/badge/KingJoChewa-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)</a> &nbsp; &nbsp;
-<a href="https://www.linkedin.com/in/king-josaphat-chewa/">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)</a> &nbsp; &nbsp;
+<a href="https://github.com/Hedevedup">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a> &nbsp; &nbsp;
+<a href="https://twitter.com/devtochi"> ![Twitter](https://img.shields.io/badge/devtochi-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)</a> &nbsp; &nbsp;
+<a href="https://www.linkedin.com/in/je/">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)</a> &nbsp; &nbsp;
 <a href="https://angel.co/u/Kingjosh007">![AngelList](https://img.shields.io/badge/AngelList-%23D4D4D4.svg?style=for-the-badge&logo=AngelList&logoColor=black)</a>
 
 

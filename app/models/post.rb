@@ -13,7 +13,7 @@ class Post < ApplicationRecord
     Comment.where(post: self).order(created_at: :desc).limit(5)
   end
 
-  privateprivateprivate
+  private
 
   # A method that updates the posts counter for a user.
   def update_posts_counter
