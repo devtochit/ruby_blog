@@ -1,17 +1,20 @@
-<h1>Post # by user name</h1>
-
-<div class="post">
-  <div class="post_container">
-    <div class="post_title">Post #1 by username</div>
-    <div class="post_comment_like_counter">
-    <p> comments:x  likes: y </p>
+<section id='post'>
+  <%= link_to "<-- Back to user's profile", user_url(@post.author)%>
+  <div id='post-card-full'>
+    <div id='post-header'>
+      <h2>"<%= @post.title %>" by <%= @post.author.name %></h2>
+      <p> <%= @post.comments_counter%> comments, <%= @post.likes_counter%> likes </p>
     </div>
+    <p><%= @post.text %></p>
   </div>
-  <div class="post_par">Post paragraph</div>
-  <ul class="post_comments">
-    <li class="comment">comment1</li>
-     <li class="comment">comment2</li>
-  </ul>
 
-</div>
-
+  <div id='comments'>
+    <% @comments.each do |comment| %>
+      <p> <%= comment.author.name %>: <%= comment.text %></p>
+    <% end %>
+  </div>
+  <%= render "comments/comment_form" %>
+  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+    <% form.submit 'Like' %>
+  <% end %>
+</section>
