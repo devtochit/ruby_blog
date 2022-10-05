@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-  * Clone this repository by running `git clone https://github.com/Kingjosh007/rails-blog-app` in your command line.
+  * Clone this repository by running `git clone https://github.com/HeDevedUp/ruby_blog.git` in your command line.
 
   * Navigate to the repository by running `cd rails-blog-app`.
 
