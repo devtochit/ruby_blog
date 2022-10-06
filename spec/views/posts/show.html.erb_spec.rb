@@ -1,54 +1,132 @@
 require 'rails_helper'
 
 RSpec.describe 'posts #show', type: :feature do
-  before :each do
-    @user = User.create(
-      name: 'Gabriel',
-      photo: 'https://www.pexels.com/photo/silhouette-of-a-person-on-a-swing-3293148/',
-      bio: "I'm a student at Microverse",
-      posts_counter: 0
-    )
-    Post.create(author: @user, title: 'Title', text: 'Text', comments_counter: 0, likes_counter: 0)
-    Post.create(author: @user, title: 'Title2', text: 'Text2', comments_counter: 0, likes_counter: 0)
-    Post.create(author: @user, title: 'Title3', text: 'Text3', comments_counter: 0, likes_counter: 0)
-    @post = Post.create(author: @user, title: 'Title4', text: 'Text4', comments_counter: 0, likes_counter: 0)
-    User.create(
-      name: '1st',
-      photo: 'https://www.pexels.com/photo/silhouette-of-a-person-on-a-swing-3293148/',
-      bio: "I'm a student at Microverse",
-      id: 1,
-      posts_counter: 0
-    )
-    visit "/users/#{@user.id}/posts/#{@post.id}"
-  end
 
-  describe 'post show page' do
-    it 'shows the post\'s title' do
-      expect(page).to have_content(@post.title)
+
+    before(:each) do
+      @fake_user = User.create(
+        name: 'Mr.Test',
+        photo: 'test.png',
+        bio: 'Testing...'
+      )
+      @fake_post = Post.create(
+        author: @fake_user,
+        title: 'Fake Post',
+        text: 'Fake description'
+      )
+
+      visit user_post_path(@fake_user, @fake_post)
     end
 
-    it 'shows who wrote the post' do
-      expect(page).to have_content(@user.name)
+    it "should show the post's title" do
+      expect(page).to have_content(@fake_post.title)
     end
 
-    it 'shows how many comments there are on a post' do
-      expect(page).to have_content(@post.comments.count)
+    it 'should show who wrote the post' do
+      expect(page).to have_content(@fake_user.name)
     end
 
-    it 'shows how many likes there are on a post' do
-      expect(page).to have_content(@post.likes.count)
+    it 'should show how many comments a post has' do
+      expect(page).to have_content("#{@fake_post.comments_counter} comments")
     end
 
-    it 'shows the post body' do
-      expect(page).to have_content(@post.text)
+    it 'should show how many likes a post has' do
+      expect(page).to have_content("#{@fake_post.likes_counter} likes")
     end
 
-    it 'shows all comments and the author name' do
-      comments = @post.comments
+    it "should show the post's body" do
+      expect(page).to have_content(@fake_post.text)
+    end
+
+    it 'should show the username and picture of each commentor' do
+      num_comments_created = 3
+      comments = []
+
+      num_comments_created.times do |i|
+        comment = Comment.create(
+          author: @fake_user,
+          post: @fake_post,
+          text: "This is the comment example number #{i}"
+        )
+        comments.push(comment)
+      end
+
+      visit user_post_path(@fake_user, @fake_post)
+
       comments.each do |comment|
-        expect(page).to have_content(comment.author.name)
+        author = comment.author
+
+        expect(page).to have_content(author.name)
+        expect(page).to have_css("img[src='#{author.photo}']")
+      end
+    end
+
+    it 'should show the comment each commentor left' do
+      num_comments_created = 3
+      comments = []
+
+      num_comments_created.times do |i|
+        comment = Comment.create(
+          author: @fake_user,
+          post: @fake_post,
+          text: "This is the comment example number #{i}"
+        )
+        comments.push(comment)
+      end
+
+      visit user_post_path(@fake_user, @fake_post)
+
+      comments.each do |comment|
         expect(page).to have_content(comment.text)
       end
     end
   end
-end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
