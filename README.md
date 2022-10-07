@@ -85,6 +85,12 @@ To get a local copy up and running follow these simple example steps.
 <a href="https://www.linkedin.com/in/je/">![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)</a> &nbsp; &nbsp;
 <a href="https://angel.co/u/Kingjosh007">![AngelList](https://img.shields.io/badge/AngelList-%23D4D4D4.svg?style=for-the-badge&logo=AngelList&logoColor=black)</a>
 
+👤 **Gabriel Santo**
+
+- GitHub: [@gvgesanto2](https://github.com/gvgesanto2)
+- Twitter: [@GabrielSanto997](https://twitter.com/GabrielSanto997)
+- LinkedIn: [Gabriel Santo](https://linkedin.com/in/gabriel-santo-5882a71b2/)
+
 
 ## 🤝 Contributing
 
