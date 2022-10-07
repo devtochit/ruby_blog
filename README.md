@@ -31,7 +31,7 @@ The project is divided in eleven (11) milestones and one exercise. Check the cor
 - Milestone 5: Views
 - Milestone 6: Forms
 - Milestone 7: Validations, Model specs, and n+1 problems
-- **Milestone 8: Add Devise**
+- Milestone 8: Add Devise
 - Milestone 9: Add authorization rules
 - Milestone 10: Integration specs for views
 - Milestone 11: Add API endpoints
@@ -53,6 +53,9 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
   * Clone this repository by running `git clone https://github.com//rails-blog-app` in your command line.
+
+  * Clone this repository by running `git clone https://github.com/HeDevedUp/ruby_blog.git` in your command line.
+
 
   * Navigate to the repository by running `cd rails-blog-app`.
 
