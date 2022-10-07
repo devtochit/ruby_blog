@@ -1,0 +1,14 @@
+.c-user-bio {
+  padding: 2rem 1.6rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.6rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+  }
+}

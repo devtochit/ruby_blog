@@ -1,0 +1,12 @@
+<header class="c-profile-header">
+  <div class="c-profile-header__top">
+  
+  </div>
+  <div class="c-profile-header__bottom">
+    <img src=<%= user.photo || image_url('blank_avatar.jpg') %> class="c-round-img--lg c-profile-header__img" alt="user profile photo" />
+    <div class="c-profile-header__info">
+      <h1 class="c-profile-header__name"><%= user.name %></h1>
+      <p class="c-profile-header__posts"><%= user.posts_counter %> posts</p>
+    </div>
+  </div>
+</header>

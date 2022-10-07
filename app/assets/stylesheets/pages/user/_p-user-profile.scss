@@ -1,0 +1,10 @@
+.p-user-profile {
+  &__content {
+    max-width: 50rem;
+    margin: 2.4rem auto;
+
+    & > *:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
+}

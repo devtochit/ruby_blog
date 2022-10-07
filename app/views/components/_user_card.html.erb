@@ -1,0 +1,11 @@
+<%= link_to user, class: 'c-user-card' do %>
+  <img src=<%= user.photo || image_url('blank_avatar.jpg') %> class="c-round-img--md" alt="user photo" />
+  <div class="c-user-card__content">
+    <h3 class="c-user-card__name">
+      <%= user.name %>
+    </h3>
+    <p class="c-user-card__count">
+      Number of posts: <%= user.posts_counter %>
+    </p>
+  </div>
+<% end %>

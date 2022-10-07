@@ -1,12 +1,6 @@
-
-<section id='posts'>
-  <%= render 'shared/user_card', user: @user %>
-  <% @posts.each do |post| %>
-    <%= render 'shared/post_card', post: post%>
-    <div class='recent-comments'>
-      <% post.show_recent_comments.includes(:author).each do |comment| %>
-        <p><%= comment.author.name %>: <%= comment.text %></p>
-      <% end %>
-    </div>
-  <% end %>
+<section class="p-user-profile">
+  <%= render "components/user_header", user: @user %>
+  <div class="p-user-profile__content">
+    <%= render "components/posts_list", posts: @posts, user_route: user_path(@user) %>
+  </div>
 </section>

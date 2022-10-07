@@ -1,25 +1,18 @@
-<section id='user-profile'>
-  <%= link_to '<-- Back to users list', users_url%>
-  <div id='user-card-full'>
-    <h1><%= @user.name %>'s Profile</h1>
-    <div id='user-bio'>
-      <img src=<%= @user.photo %> alt="User <%= @user.id %> picture" width="225" height="225">
-      <p>
-        <%= @user.bio %>
-        <br>
-        I've created <%= @user.posts_counter %> posts in total.
-      </p>
-    </div>
-    <%= link_to 'Create new post', new_user_post_url(@user) %>
-  </div>
+<section class="p-user-profile">
+  <%= render "components/user_header", user: @user %>
 
-  <div id='posts-list'>
-    <% @user.show_recent_posts.each do |post| %>
-      <%= render 'shared/post_card', post: post%>
-    <% end %>
+  <div class="p-user-profile__content">
+    <%= render "components/user_bio", bio: @user.bio %>
+    <%= render "components/posts_preview", user: @user, posts: @posts %>
+    
+    <% if @user == current_user %>
+      <%= form_with url: user_posts_path(current_user), method: :post, scope: :user_posts do |form| %>
+        <%= form.text_field :title, :required => true, placeholder: "Enter the post title..." %>
+        <%= form.text_field :text, :required => true, placeholder: "Enter the post text..." %>
 
-    <% if @user.posts_counter > 3 %>
-      <%= link_to 'See all posts', user_posts_url(@user)%>
+        <%= form.submit value: 'Save post', class:'p-user-profile__post-btn' %>
+      <% end %>
     <% end %>
   </div>
+
 </section>
