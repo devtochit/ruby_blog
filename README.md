@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-  * Clone this repository by running `git clone https://github.com/Kingjosh007/rails-blog-app` in your command line.
+  * Clone this repository by running `git clone https://github.com//rails-blog-app` in your command line.
 
   * Navigate to the repository by running `cd rails-blog-app`.
 
@@ -78,7 +78,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Author
 
-👤 **Jesse uzoma (Hedevedup)**
+👤 **Jesse uzoma (HedevedUp)**
 
 <a href="https://github.com/Hedevedup">![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</a> &nbsp; &nbsp;
 <a href="https://twitter.com/devtochi"> ![Twitter](https://img.shields.io/badge/devtochi-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)</a> &nbsp; &nbsp;
