@@ -1,0 +1,21 @@
+<div class="c-posts-preview c-card">
+  <h2 class="c-posts-preview__title">
+    Posts Preview
+  </h2>
+
+  <% if posts.length.zero? %>
+    <p class="c-posts-preview__empty-msg">
+      No posts created.
+    </p>
+  <% else %>
+    <ul class="c-posts-preview__list">
+      <% posts.each do |post| %>
+        <li>
+          <%= render "components/post_item", post: post, comments: [], route: user_post_path(user, post) %>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= link_to "See All Posts", user_posts_path(user), class: "c-posts-preview__btn c-btn", role: "button" %> 
+  <% end %>
+</div>

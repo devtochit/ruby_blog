@@ -1,20 +1,67 @@
-<section id='post'>
-  <%= link_to "<-- Back to user's profile", user_url(@post.author)%>
-  <div id='post-card-full'>
-    <div id='post-header'>
-      <h2>"<%= @post.title %>" by <%= @post.author.name %></h2>
-      <p> <%= @post.comments_counter%> comments, <%= @post.likes_counter%> likes </p>
-    </div>
-    <p><%= @post.text %></p>
+<section class="p-post">
+  <article class="c-post c-card">
+    <header class="c-post__header">
+      <h3 class="c-post__title">
+        <%= @post.title %>
+      </h3>
+      <span class="c-post__author">
+        by <%= @post.author.name %>
+      </span>
+    </header>
+      
+  <p class="c-post__text">
+    <%= @post.text %>
+  </p>
+  <div class="c-post__info">
+    <span class="c-post__likes">
+      <%= @post.likes_counter %> likes
+    </span>
+    <span class="c-post__likes">
+      <%= @post.comments_counter %> comments
+    </span>
   </div>
 
-  <div id='comments'>
-    <% @comments.includes(:author).each do |comment| %>
-      <p> <%= comment.author.name %>: <%= comment.text %></p>
+  <div class="c-post__action"> 
+    <%= form_with url: user_post_likes_path(@user, @post), method: :post do |form| %>
+      <%= form.submit value: 'Add like', class:'c-post__action-like' %>
     <% end %>
-  </div>
-  <%= render "comments/comment_form" %>
-  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
-    <% form.submit 'Like' %>
+  </div> 
+
+  <% if @comments.length > 0 %>
+    <div class="c-comments-preview">
+      <ul class="c-comments-preview__list">
+        <% @comments.each do |comment| %>
+          <li>
+            <article class="c-comment-item">
+              <img 
+                src=<%= comment.author.photo || image_url('blank_avatar.jpg') %>
+                class="c-comment-item__img" 
+                alt="comment owner photo" 
+              />
+              <div class="c-comment-item__content">
+                <div class="c-comment-item__box">
+                  <h3 class="c-comment-item__author">
+                    <%= comment.author.name %>
+                  </h3>
+                  <p class="c-comment-item__text">
+                    <%= comment.text %>
+                  </p>
+                </div>
+                <span class="c-comment-item__date">
+                  <%= comment.created_at %>
+                </span>
+              </div>
+            </article>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %> 
+  </article>
+
+  <%= form_with url: user_post_comments_path(@user, @post), method: :post, class: "p-post__comment-form" do |form| %>
+    <%= form.text_field :text, :required => true, placeholder: "Enter the comment text..." %>
+
+    <%= form.submit value: 'Save comment', class:'p-post__comment-btn' %>
   <% end %>
 </section>

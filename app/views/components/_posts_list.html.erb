@@ -1,0 +1,7 @@
+  <ul class="c-posts-list">
+    <% posts.each do |post| %>
+      <li class="c-card">
+        <%= render "components/post_item", post: post, comments: post.get_most_recent_comments(3).includes(:author), route: "#{user_route}/posts/#{post.id}" %>
+      </li>
+    <% end %>
+  </ul>

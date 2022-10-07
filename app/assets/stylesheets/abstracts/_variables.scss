@@ -1,0 +1,55 @@
+:root {
+  // Color Pallete
+  --color-primary-50: #ebebff;
+  --color-primary-100: #cbcdff;
+  --color-primary-300: #7f8cff;
+  --color-primary-400: #6070ff;
+  --color-primary-500: #396df2;
+  --color-grey-100: #f4f4f4;
+  --color-grey-150: #f0f2f5;
+  --color-grey-200: #eff3f4;
+  --color-grey-300: #ced0d4;
+  --color-grey-600: #65676b;
+  --color-grey-950: #050505;
+  --color-black: #000;
+  --color-white: #fff;
+
+  // Other color variables
+  --color-text-primary: var(--color-grey-950);
+  --color-text-secondary: var(--color-grey-600);
+  --color-page-bg: var(--color-grey-150);
+
+  // Header
+  --header-height: 7rem;
+
+  // Main Container
+  --main-container-max-width: 160rem;
+}
+
+$breakpoints: (
+  // 15.625em = 250px
+  'screen-xxsm': 15.625em,
+  // 20em = 320px
+  'screen-xsm': 20em,
+  // 31.25em = 500px
+  'screen-sm': 31.25em,
+  // 50em = 800px
+  'screen-md': 50em,
+  // 62.5em = 1000px
+  'screen-lg': 62.5em,
+  // 68.75em = 1100px
+  'screen-xlg': 68.75em,
+  // 75em = 1200px
+  'screen-xxlg': 75em,
+  // 81.25em = 1300px
+  'screen-hg': 81.25em,
+  // 93.75em = 1500px
+  'screen-xhg': 93.75em,
+  // 100em = 1600px
+  'screen-xxhg': 100em
+);
+
+$bp-types: (
+  'max': max-width,
+  'min': min-width,
+);

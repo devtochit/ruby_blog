@@ -1,0 +1,47 @@
+<%= link_to route, class: "c-post-item" do %>
+  <h3 class="c-post-item__title">
+    <%= post.title %>
+  </h3>
+  <p class="c-post-item__text">
+    <%= post.text[0..100] %>...
+  </p>
+  <div class="c-post-item__info">
+    <span class="c-post-item__likes">
+      <%= post.likes_counter %> likes
+    </span>
+    <span class="c-post-item__likes">
+      <%= post.comments_counter %> comments
+    </span>
+  </div>
+
+  <% if comments.length > 0 %>
+    <div class="c-comments-preview">
+      <ul class="c-comments-preview__list">
+        <% comments.each do |comment| %>
+          <li>
+            <article class="c-comment-item">
+              <img 
+                src=<%= comment.author.photo || image_url('blank_avatar.jpg') %>
+                class="c-comment-item__img" 
+                alt="comment owner photo" 
+              />
+              <div class="c-comment-item__content">
+                <div class="c-comment-item__box">
+                  <h3 class="c-comment-item__author">
+                    <%= comment.author.name %>
+                  </h3>
+                  <p class="c-comment-item__text">
+                    <%= comment.text %>
+                  </p>
+                </div>
+                <span class="c-comment-item__date">
+                  <%= comment.created_at %>
+                </span>
+              </div>
+            </article>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %> 
+<% end %> 

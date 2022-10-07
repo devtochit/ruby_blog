@@ -1,0 +1,25 @@
+<header class="c-header">
+  <div class="c-header__content">
+    <%= link_to 'Rails Blog', root_path, class: 'c-header__logo' %>
+
+    <nav class="c-header__nav">
+      <ul class="c-header__nav-list">
+        <% if current_user %>
+          <li>
+            <%= link_to "edit account", edit_user_registration_path, class: "c-header__nav-link" %>
+          </li>
+          <li>
+            <%= button_to "sign out", destroy_user_session_path, method: :delete, class: "c-header__nav-link" %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "sign up", new_user_registration_path, class: "c-header__nav-link" %>
+          </li>
+          <li>
+            <%= link_to "sign in", new_user_session_path, class: "c-header__nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
