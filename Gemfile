@@ -6,6 +6,18 @@ ruby '3.1.2'
 # Rubocop linter
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# CanCanCan for user authorization
+gem 'cancancan', '~> 1.9'
+
+# Figaro for easier env variables
+gem 'figaro'
+
+# JWT for token based authentication
+gem 'jwt'
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
