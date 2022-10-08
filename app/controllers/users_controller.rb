@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @users = User.all
+    @current_user = current_user
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def show
-    @current_user = current_user
     @user = User.find(params[:id])
-    @posts = @user.get_most_recent_posts(3)
+    @current_user = current_user
   end
 end
