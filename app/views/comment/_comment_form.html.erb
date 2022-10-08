@@ -1,4 +1,0 @@
-<%= form_with url: user_post_comments_url(@user, @post), method: :post, local: true, scope: :comment do |form| %>
-  <%= form.text_area :text, placeholder: 'What do you think about this?' %>
-  <%= form.submit 'Add comment'%>
-<% end %>

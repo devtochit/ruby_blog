@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     author = current_user
     post = Post.find(params[:post_id])
@@ -15,6 +17,16 @@ class CommentsController < ApplicationController
           flash.now[:error] = 'Error: Comment could not be created.'
         end
       end
+    end
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to user_post_url }
+      format.json { head :no_content }
     end
   end
 end

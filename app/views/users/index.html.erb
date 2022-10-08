@@ -1,6 +1,9 @@
-<section id="users">
-  <h1>Users list</h1>
-  <% @users.each do |user| %>
-      <%= render "shared/user_card", user: user %>
-  <% end %>
+<section class="p-users">
+  <ul class="c-vertical-list">
+    <% @users.each do |user| %>
+      <li>
+        <%= render "components/user_card", user: user %>
+      </li>
+    <% end %>
+  </ul>
 </section>

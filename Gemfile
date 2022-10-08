@@ -3,20 +3,32 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+# Rubocop linter
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+# CanCanCan for user authorization
+gem 'cancancan', '~> 1.9'
+
+# Figaro for easier env variables
+gem 'figaro'
+
+# JWT for token based authentication
+gem 'jwt'
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
-
-# scss
-gem 'sassc-rails', '>= 2.1.0'
-
-# rubocop
-gem 'rubocop', '>= 1.0', '< 2.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+
+# Use the devise gem as the session and account manager for the application
+gem 'devise'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -49,6 +61,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
+gem 'sass-rails', '>= 4.0.0'
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
@@ -59,12 +72,10 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.9.0'
 end
 
 group :development do
-  # Identify the N+1 problemproblemproblem
-  gem 'bullet'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
@@ -81,3 +92,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'bullet', '~> 7.0'

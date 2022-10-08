@@ -1,0 +1,21 @@
+$btn-border-height: 3px;
+
+.c-user-tab {
+  display: flex;
+
+  &__btn {
+    height: 6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: none;
+    border-bottom: $btn-border-height solid transparent;
+    padding: $btn-border-height 1.6rem 0;
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: #1876f2;
+    }
+  }
+}

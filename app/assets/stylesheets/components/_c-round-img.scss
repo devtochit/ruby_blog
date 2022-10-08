@@ -1,0 +1,9 @@
+.c-round-img {
+  &--md {
+    @include roundElem(5.5rem);
+  }
+
+  &--lg {
+    @include roundElem(16.8rem);
+  }
+}

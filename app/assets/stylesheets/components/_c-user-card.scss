@@ -1,0 +1,45 @@
+.c-user-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transform: translateX(4px);
+  }
+
+  &:active {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  }
+
+  // &__img {
+  //   @include roundElem(5.5rem);
+  // }
+
+  &__content {
+    margin-left: 1.6rem;
+  }
+
+  &__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: hidden;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 2rem;
+    color: var(--color-text-primary);
+    margin-bottom: 0.4rem;
+  }
+
+  &__count {
+    font-size: 1.4rem;
+    font-style: italic;
+  }
+}
